@@ -1,0 +1,18 @@
+import java.util.Scanner;
+
+public class Exception1 {
+
+   
+    public static void main(String[] args) {
+      
+       Scanner input=new Scanner(System.in);
+     double k=input.nextDouble();
+     double sum=0;
+     int i=1;
+     while(k-sum>=0){
+         sum+=1.0/i;
+         i++;  
+  } 
+     System.out.println(i-1);
+}
+}
