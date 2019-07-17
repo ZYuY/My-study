@@ -1,0 +1,16 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner input=new Scanner(System.in);
+        int a=input.nextInt();
+        double sum=0;
+            if(a<=150)
+                sum=0.4463*a;
+            else if(a>150&&a<=400)
+                sum=(a-150)*0.4663+150*0.4463;
+            else
+                sum=(a-400)*0.5663+150*0.4463+250*0.4663;
+            System.out.printf("%.1f",sum);
+    }
+}
