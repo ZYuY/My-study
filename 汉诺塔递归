@@ -1,0 +1,18 @@
+import java.util.Scanner;
+
+public class JavaApplication35 {
+public static void hanno(int num,char a,char b,char c){
+    if(num==1)
+        System.out.println("从"+a+"移到"+c);
+    else{
+        hanno(num-1,a,c,b);
+        System.out.println("从"+a+"移到"+c);
+        hanno(num-1,b,a,c);
+    }
+}
+    public static void main(String[] args) {
+        Scanner input=new Scanner(System.in);
+        int n=input.nextInt();
+        hanno(n,'A','B','C');
+    }
+}
