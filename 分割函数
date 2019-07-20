@@ -1,0 +1,16 @@
+
+class Solution {
+    public int partitionDisjoint(int[] A) {
+        int max=A[0]；//左边数组中的最大值
+        int submax=A[0]；//遍历过的元素的最大值
+        int count=0;//划分点
+       for(int i=1;i<A.length;i++) {
+           max=Math.max(max,A[i]);
+           if(A[i]<submax){
+               submax=max;
+               count=i;
+           }
+       }
+        return count+1;
+    }
+}
