@@ -1,0 +1,25 @@
+class Solution {
+    public int findMaxLength(int[] nums) {
+        int sum=0;
+        int ans=0;
+        for(int i=0;i<nums.length;i++){
+            if(nums[i]==0)
+                nums[i]=-1;//把0变成-1
+        }
+        HashMap<Integer,Integer>map=new HashMap();//将键映射到值得对象
+        for(int i=0;i<nums.length;i++){
+            sum+=nums[i];
+            if(sum==0){
+                ans=i+1;//当sum=0时长度为下标i+1
+            }
+            if(map.get(sum)==null){
+                map.put(sum,i);//给map写入值（sum，i）
+                continue;
+            }
+            int temp=i-map.get(sum);//sum！=0长度为当前i-之前存的相同sum的i值
+            if(temp>ans)
+                ans=temp;
+        }
+        return ans;
+    }
+}
