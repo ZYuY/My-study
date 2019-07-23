@@ -1,0 +1,109 @@
+public class ShunXuBiao{
+	private int []a;
+	private int size;
+	public ShunXuBiao(){
+		a=new int[20];
+		size=0;
+	}//构造方法
+	public void pushBack(int element){
+		ensureCapacity();
+		a[size++]=element;
+	}//尾插
+	public void pushFront(int element){
+		ensureCapacity();
+		for(int i=size;i>=1;i--){
+			a[i]=a[i-1];
+		}
+		a[0]=element;
+		size++;
+	}//头插
+	public void insert(int index, int element){
+		if(index<0||index>size){
+			System.out.println("下标不存在");
+			return;
+		}
+		ensureCapacity();
+		for(int i=size;i>=index+1;i--){
+			a[i]=a[i-1];
+		}
+		a[index]=element;
+		size++;
+	}//普通插入
+	public void popBack(){
+		if(size<=0){
+			System.out.println("顺序表为空");
+			return;
+		}
+		a[--size]=0;
+	}//尾删
+	public void popFront(){
+		if(size<=0){
+			System.out.println("顺序表为空");
+			return;
+		}
+		for(int i=1;i<=size-1;i++){
+			a[i-1]=a[i];
+		}
+		a[--size]=0;
+			
+	}//头删
+	public void earse(int index){
+		if(size<=0){
+			System.out.println("顺序表为空");
+			return;
+		}
+		if(index<0||index>=size){
+			System.out.println("下标不存在");
+			return ;
+		}
+		for(int i=index+1;i<=size-1;i++){
+			a[i-1]=a[i];
+		}
+		a[--size]=0;
+	}//中间删
+	public void print(){
+		System.out.println("打印顺序表: 当前容量: " + a.length);
+		for (int i = 0; i < size; i++) {
+			System.out.print(a[i] + " ");
+		}
+		System.out.println();
+		
+	}
+	private void ensureCapacity(){
+		if(size<a.length)
+			return ;
+		int newCapacity=a.length*2;
+		int []newA=new int[newCapacity];
+		for(int i=0;i<size;i++){
+			newA[i]=a[i];
+		}
+		a=newA;
+		
+	}//保证容量够用，否则进行数组扩容
+	
+	public static void main(String[] args) {
+		ShunXuBiao list = new ShunXuBiao();
+		list.print();
+		list.pushBack(1);
+		list.pushBack(2);
+		list.pushBack(3);
+		list.print();	// 1 2 3
+		list.pushFront(10);
+		list.pushFront(20);
+		list.pushFront(30);
+		list.print();	// 30 20 10 1 2 3
+		list.insert(3, 100);
+		list.print();	// 30 20 10 100 1 2 3
+		list.insert(20, 200);	
+		
+		list.earse(2);
+		list.earse(2);
+		list.print();	// 30 20 1 2 3
+		list.popFront();
+		list.popFront();
+		list.popFront();
+		list.print();	// 2 3
+		list.popBack();	
+		list.print();
+    }
+}
