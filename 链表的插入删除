@@ -1,0 +1,37 @@
+
+class Node {
+    int val;
+    Node next;
+    Node(int val){
+        this.val=val;
+        this.next=null;
+    }
+    public String toString() {
+        return String.format("Node(%d)", val);
+    }
+}public class MyLinkedList {
+    public static void main(String[]args){
+        Node head=null;
+        head = pushFront(head, 0);
+        head = pushFront(head, 1);
+        head = pushFront(head, 2);
+        print(head);	// 2 1 0
+
+        // 尾插
+        head = popFront(head);
+        print(head);	// 1 0
+
+        head = pushBack(head, 10);
+        head = pushBack(head, 20);
+        head = pushBack(head, 30);
+        print(head);	// 1 0 10 20 30
+        head = popBack(head);
+        head = popBack(head);
+        head = popBack(head);
+        head = popBack(head);
+        head = popBack(head);
+        print(head);		// 空
+
+        head = pushBack(head, 100);
+        print(head);
+    }
