@@ -1,0 +1,51 @@
+【方法一】先求长度，遍历length-k次
+/*
+public class ListNode {
+    int val;
+    ListNode next = null;
+
+    ListNode(int val) {
+        this.val = val;
+    }
+}*/
+public class Solution {
+    public ListNode FindKthToTail(ListNode head,int k) {
+        int length=0;
+       for(ListNode cur=head;cur!=null;cur=cur.next){
+           length++;
+       }
+        if(length<k)
+            return null;
+        ListNode r=head;
+            for(int i=0;i<length-k;i++){
+                r=r.next;
+            }
+            return r;
+    } 
+}
+【方法二】两个引用，一个先遍历k次，
+/*
+public class ListNode {
+    int val;
+    ListNode next = null;
+
+    ListNode(int val) {
+        this.val = val;
+    }
+}*/
+public class Solution {
+    public ListNode FindKthToTail(ListNode head,int k) {
+       ListNode first=head;
+        ListNode second=head;
+        for(int i=0;i<k;i++){
+            if(second==null)
+                return null;
+            second=second.next;
+        }
+        while(second!=null){
+            first=first.next;
+            second=second.next;
+        }
+        return first;
+    } 
+}
