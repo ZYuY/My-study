@@ -20,3 +20,27 @@ class Solution {
         return ls;
     }
 }
+方法二 两个引用，一个一次走一步，一个一次走两步，当走两步的那个为空时，一次走一步的那个刚好走到了中间结点。
+/**
+ * Definition for singly-linked list.
+ * public class ListNode {
+ *     int val;
+ *     ListNode next;
+ *     ListNode(int x) { val = x; }
+ * }
+ */
+class Solution {
+    public ListNode middleNode(ListNode head) {
+        if(head==null)
+            return null;
+      ListNode pre=head;
+        ListNode cur=head.next;
+        while(cur!=null){
+            pre=pre.next;
+            cur=cur.next;
+            if(cur!=null)
+                cur=cur.next;
+        }
+        return pre;
+    }
+}
