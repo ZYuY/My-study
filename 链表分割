@@ -1,0 +1,56 @@
+## 题目
+编写代码，以给定值x为基准将链表分割成两部分，所有小于x的结点排在大于或等于x的结点之前
+给定一个链表的头指针 ListNode* pHead，请返回重新排列后的链表的头指针。注意：分割以后保持原来的数据顺序不变。
+## 思想
+新建两个空链表，比x小的放在min链表中，大于等于的放在max链表中，尾插，除了考虑原链表为空的情况，还要考虑两个链表长度不一样的情况。把他们拼接起来。
+```
+import java.util.*;
+
+/*
+public class ListNode {
+    int val;
+    ListNode next = null;
+
+    ListNode(int val) {
+        this.val = val;
+    }
+}*/
+public class Partition {
+    public ListNode partition(ListNode pHead, int x) {
+        // write code here
+        ListNode min=null;
+        ListNode max=null;
+        ListNode cur=pHead;
+        ListNode last1=null;
+        ListNode last2=null;
+        if(pHead==null)
+            return null;
+        while(cur!=null){
+            if(cur.val<x){
+                if(min==null)
+                    min=cur;
+                else{
+                    last1.next=cur;
+                }
+                last1=cur;
+            }else{
+                 if(max==null)
+                    max=cur;
+                else{
+                    last2.next=cur;
+                }
+                last2=cur;
+            }
+                cur=cur.next;
+        }
+        if(last1==null)//比x小的数的链表为空，直接返回另一个链表。
+            return max;
+        else{
+            last1.next=max;//拼接两个链表
+            if(last2!=null)//必须考虑给末尾赋null
+                last2.next=null;
+            return min;
+        }
+    }
+}
+```
