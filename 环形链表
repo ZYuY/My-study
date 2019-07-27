@@ -1,0 +1,33 @@
+/**
+ * Definition for singly-linked list.
+ * class ListNode {
+ *     int val;
+ *     ListNode next;
+ *     ListNode(int x) {
+ *         val = x;
+ *         next = null;
+ *     }
+ * }
+ */
+public class Solution {
+    public ListNode detectCycle(ListNode head) {
+        ListNode fast=head;//快慢指针
+        ListNode slow=head;
+        do{
+            if(fast==null)
+                return null;
+            fast=fast.next;
+            if(fast==null)
+                return null;
+            fast=fast.next;
+            slow=slow.next;
+        }while(fast!=slow);///找到相遇点
+        ListNode p1=head;
+        ListNode p2=fast;
+        while(p1!=p2){//一个引用从头出发，一个引用从相遇点出发，两个会在环的入口相遇
+            p1=p1.next;
+            p2=p2.next;
+        }
+        return p1;
+    }
+}
