@@ -1,0 +1,38 @@
+ * public class ListNode {
+ *     int val;
+ *     ListNode next;
+ *     ListNode(int x) {
+ *         val = x;
+ *         next = null;
+ *     }
+ * }
+ */
+public class Solution {
+    public int getLen(ListNode head){
+        int len=0;
+        for(ListNode cur=head;cur!=null;cur=cur.next){
+           len++;
+        }
+        return len;
+    }
+    public ListNode getIntersectionNode(ListNode headA, ListNode headB) {
+        ListNode cur1=headA;
+        ListNode cur2=headB;
+        int len1=getLen(headA);
+        int len2=getLen(headB);
+        int length=len1-len2;
+        if(len1<len2){
+            cur1=headB;//长的链表
+            cur2=headA;//短的链表
+            length=len2-len1;
+        }
+        for(int i=0;i<length;i++){
+            cur1=cur1.next;
+        }
+        while(cur1!=cur2){
+            cur1=cur1.next;
+            cur2=cur2.next;
+        }
+        return cur1;
+    }
+}
