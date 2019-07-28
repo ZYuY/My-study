@@ -1,0 +1,50 @@
+/*
+// Definition for a Node.
+class Node {
+    public int val;
+    public Node next;
+    public Node random;
+
+    public Node() {}
+
+    public Node(int _val,Node _next,Node _random) {
+        val = _val;
+        next = _next;
+        random = _random;
+    }
+};
+*/
+class Solution {
+    public Node copyRandomList(Node head) {
+        if(head==null)
+            return null;
+        Node p1=head;
+        while(p1!=null){//添加结点
+            Node p2=new Node(p1.val);
+            p2.random=null;
+            p2.next=p1.next;
+            p1.next=p2;
+            p1=p2.next;
+        }
+        p1=head;
+        while(p1!=null){//处理随机指针
+            Node p2=p1.next;
+            if(p1.random!=null){
+                p2.random=p1.random.next;
+            }
+            p1=p2.next;
+        }
+        p1=head;
+        Node newhead=head.next;
+        while(p1!=null){//拆分结点，还原链表
+            Node p2=p1.next;
+            p1.next=p2.next;
+            if(p2.next!=null){
+                p2.next=p2.next.next;
+            }
+            p1=p1.next;
+        }
+        return newhead;
+    }
+}
+```
