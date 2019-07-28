@@ -1,0 +1,176 @@
+```
+class Node{
+        int val;
+        Node prev=null;
+        Node next=null;
+        Node(int val){
+        this.val=val;
+        }
+        }
+public class LianBiao {
+    private int size=0;
+    private Node head=null;
+    private Node last=null;
+    //头插
+    public void pushFront(int val){
+        Node node=new Node(val);
+        node.next=head;
+        if(head==null){
+            last=node;
+        }else {
+            head.prev = node;
+        }
+        head=node;
+        size++;
+    }
+    //头删
+    public void popFront(){
+        if(size<=0){
+            System.out.println("链表为空格");
+            return ;
+        }
+        head=head.next;
+        if(head==null){
+            last=null;
+        }else{
+            head.prev=null;
+        }
+
+        size--;
+    }
+    //尾插
+    void pushBack(int val){
+        Node node=new Node(val);
+        if(head==null){
+            head=last=node;
+            last.next=null;
+        }else{
+            last.next=node;
+            node.prev=last;
+            last=node;
+            last.next=null;
+
+        }
+        size++;
+    }
+    //尾删
+    void popBack(){
+        if(size<=0){
+            System.out.println("链表为空格");
+            return ;
+        }
+        if(head==last){
+            head=last=null;
+        }else{
+            last.prev.next=null;
+            last=last.prev;
+        }
+        size--;
+    }
+    //根据下标插入
+    public void add(int index, int val){
+        if(index<0||index>size){
+            System.out.println("下标不存在");
+            return ;
+        }
+        if(index==0)
+            pushFront(val);
+        else if(index==size)
+            pushBack(val);
+        else{
+            Node pos=getNode(index);
+            Node node=new Node(val);
+            pos.prev.next=node;
+            node.prev=pos.prev;
+            node.next=pos;
+            pos.prev=node;
+        }
+        size++;
+    }
+    //根据下标删除
+    public void remove(int index){
+        if (size <= 0) {
+            System.out.println("无法对空链表做删除");
+            return;
+        }
+        Node pos=getNode(index);
+        if (index < 0 || index >= size) {
+            System.out.println("下标错误");
+            return;
+        }
+
+        if (index == 0) {
+            popFront();
+        } else if (index == size - 1) {
+            popBack();
+        } else{
+            pos.prev.next=pos.next;
+            pos.next.prev=pos.prev;
+        }
+        size--;
+    }
+    //找到下标用引用指向它，这里根据下标看从前往后找到它快还是从后往前快
+    private Node getNode(int index){
+        int backindex=size-index-1;//
+        Node pos;
+        if(index<=backindex){//从前往后遍历
+            pos=head;
+            for(int i=0;i<index;i++){
+                pos=pos.next;
+            }
+        }else{//从后往前遍历
+            pos=last;
+            for(int i=0;i<backindex;i++){
+                last=last.prev;
+            }
+        }
+        return pos;
+    }
+
+    public int size() {
+        return size;
+    }
+
+    public boolean isEmpty() {
+        return size == 0;
+    }
+
+    public void reset() {
+        head = last = null;
+        size = 0;
+    }
+
+    public static void main(String[] args) {
+        LianBiao list = new LianBiao();
+        list.pushFront(1);
+        list.pushFront(2);
+        list.pushFront(3);
+        System.out.println("3 2 1");
+        list.popFront();
+        list.popFront();
+        list.popFront();
+        System.out.println("");
+        list.pushBack(10);
+        list.pushBack(20);
+        list.pushBack(30);
+        System.out.println("10 20 30");
+        list.popBack();
+        list.popBack();
+        list.popBack();
+        System.out.println("");
+        list.pushBack(1);
+        list.pushBack(2);
+        list.pushBack(3);
+        list.pushBack(4);
+        list.pushBack(5);
+        System.out.println("1 2 3 4 5");
+        list.add(1, 10);
+        System.out.println("1 10 2 3 4 5");
+        list.add(5, 20);
+        System.out.println("1 10 2 3 4 20 5");
+        list.remove(1);
+        System.out.println("1 2 3 4 20 5");
+        list.remove(2);
+        System.out.println("1 2 4 20 5");
+    }
+}
