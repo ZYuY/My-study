@@ -1,0 +1,73 @@
+## 注释
+<!--注释内容-->   按ctrl+/
+元素
+元素=起始标记+结束标记+元素内容+元素属性
+a 超链接
+..元素之间不能相互嵌套..
+
+## h
+标题
+
+h1~h6表示一级标题到六级标题
+快捷键 h$*6>{内容}
+## p
+段落
+
+lorem 乱数假文，没有任何实际含义的文字
+
+## span[无语义]
+
+没有语义，仅用于设置样式。
+
+以前，行级元素：不会换行。块级元素：在显示时会独占一行，会换行
+现在，到了HTML5，已经弃用这种说法。
+
+## pre
+预格式化文本元素
+
+空白折叠：在源代码中的连续空白字符（空格，换行，制表），在页面显示时，会被折叠成一个空格。
+例外：在pre元素中的内容不会出现空白折叠。
+在pre元素内部出现的内容，它会完全不断的显示在页面上。
+该元素通常用于在网页上显示一些代码。
+pre元素的本质：它有一个默认的css属性。
+显示代码时，通常外面套code元素，code表示代码区域。
+## 代码练习
+
+```
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>哈哈哈</title>
+</head>
+<body>
+    <!--超链接-->
+    <a href="http://www.duyiedu.com" title="黑龙江渡一教育有限公司">渡一教育</a>
+    <h1 title="李明建">
+        狗
+    </h1>
+    <img src="https://img03.sogoucdn.com/net/a/04/link?url=https%3A%2F%2Fi02piccdn.sogoucdn.com%2F34c647c77c9f50cb&appid=122" alt="">
+    <h1>1标题</h1>
+    <h2>2标题</h2>
+    <h3>3标题</h3>
+    <h4>4标题</h4>
+    <h5>5标题</h5>
+    <h6>6标题</h6>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi nulla corporis illum aut fuga obcaecati recusandae natus id, deserunt ex modi soluta deleniti maiores, ipsam molestiae exercitationem tempore omnis maxime.</p>
+    <p>Natus odit iusto cupiditate quam eaque facilis ratione id totam assumenda! Aliquam accusamus, quas id iure, minima cum deserunt repudiandae voluptatibus vitae nam labore saepe assumenda, nesciunt provident. Error, voluptate!</p>
+    <p>Recusandae, a aut voluptatibus distinctio, animi at explicabo exercitationem beatae illum, vitae corrupti consequatur perspiciatis odio numquam est dolorem similique obcaecati. Error minima, vel eaque corporis cumque debitis minus nulla!</p>
+    <p>Exercitationem quasi dignissimos voluptates reprehenderit praesentium minus sint, rerum corrupti ab cupiditate id cumque repellat neque tempore eos fuga, ex architecto aut quae a, veniam minima! Cum ipsa laborum laboriosam?</p>
+    <p>Dolor quae praesentium, libero beatae aut laudantium quas recusandae obcaecati fuga impedit similique voluptatem ut. Magnam fuga ipsum exercitationem deleniti voluptatum quasi rem maiores voluptates rerum, culpa quo eligendi! Eaque.</p>
+    <p>Numquam deserunt fuga voluptatum minus quae accusantium, reiciendis distinctio, inventore sunt quis, quisquam placeat exercitationem tempore laboriosam repudiandae! Mollitia cum dolor numquam commodi ut ullam eius voluptates assumenda nostrum molestiae.</p>
+   三原色包括： <span style="color:red">红</span>. <span style="color:green">绿</span>.<span style="color:blue">蓝</span>
+   <pre title="我是李明建">
+         (^^^^^^)
+        {/ o  o /}
+         ( (oo) )
+           ~~~~~
+   </pre>
+</body>
+</html>
+```
