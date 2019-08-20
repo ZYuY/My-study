@@ -1,0 +1,26 @@
+题目：求一个有序数组中两个元素值相加为k的数字，返回这两个元素的下标，要求时间复杂度是o(n),空间复杂度为o(1)。
+思想：前后指针遍历，如果sum小于k，前面指针后移，反之左移。
+
+public class lianxi {
+    public static void fin(int []a,int k) {
+        int pre = 0;
+        int cur = a.length - 1;
+        int sum = 0;
+        while (pre <= cur) {
+            sum = a[pre] + a[cur];
+            if (sum < k)
+                pre++;
+            else if (sum > k)
+                cur--;
+            else {
+                System.out.println(pre + " " + cur);
+                break;
+            }
+        }
+        }
+        public static void main(String[]args){
+           
+            int[] arr = {1, 2, 3, 5, 7, 8, 12, 15};
+            fin(arr, 11);
+            }
+            }
