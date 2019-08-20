@@ -1,0 +1,26 @@
+## 题目
+在字符串中找出第一个只出现一次的字符，如输入“abaccdeff”，输出'b'，要求时间复杂度为o(n)。
+## 理解
+先计算出每个字符出现的次数，然后从头遍历找出第一个只出现一次的字符。用ASCII把字符转换为下标计算出现的次数。
+## 代码
+```
+public class lianxi {
+    public static char fin(String a) {
+       char []arr=a.toCharArray();//字符串转换为数组
+       char []str=new char[128];
+       for(int i=0;i<arr.length;i++){
+           str[arr[i]-'\0']++;//求出每个字符出现的次数
+       }
+       for(int i=0;i<arr.length;i++){
+           if(str[arr[i]-'\0']==1)//从头遍历出现一次就返回
+               return arr[i];
+       }
+       return '#';
+        }
+        public static void main(String[]args){
+         
+            String a="abaccdeff";
+            System.out.println(fin(a));
+            }
+      }
+```
