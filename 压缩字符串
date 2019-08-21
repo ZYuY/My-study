@@ -1,0 +1,42 @@
+
+```
+public class lianxi {
+    public static String fin(String a) {
+       char[]arr=a.toCharArray();//将字符串转换为字符数组
+       StringBuilder sb=new StringBuilder();//用来存储
+       int count=1;
+       int i;
+       for( i =0;i<arr.length-1;i++){
+           if(arr[i+1]==arr[i]){
+               count ++;//记录字符重复出现的个数
+               continue;
+           }
+           else{
+               if(count==1)
+                   sb.append(arr[i]);
+               else{
+                   sb.append(count) ;
+                   sb.append(arr[i]);
+               }
+               count=1;
+           }
+       }
+       if(arr[i]!=arr[i-1])//单独考虑后两个字符
+           sb.append(arr[i]);
+       else{
+           sb.append(count);
+           sb.append(arr[i]) ;
+       }
+          return sb.toString();//返回存入的数据
+        }
+       public static void main(String[]args){
+       String arr="accxxxyyyyyzf";
+        System.out.println(fin(arr));
+
+        }
+    }
+
+
+```
+## 运行截图
+![在这里插入图片描述](https://img-blog.csdnimg.cn/20190821191904897.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzY4ODUyNw==,size_16,color_FFFFFF,t_70)
