@@ -1,0 +1,38 @@
+题目：
+给定一个单链表，把所有的奇数节点和偶数节点分别排在一起。请注意，这里的奇数节点和偶数节点指的是节点编号的奇偶性，而不是节点的值的奇偶性。
+
+请尝试使用原地算法完成。你的算法的空间复杂度应为 O(1)，时间复杂度应为 O(nodes)，nodes 为节点总数。
+
+示例 1:
+
+输入: 1->2->3->4->5->NULL
+输出: 1->3->5->2->4->NULL
+理解：
+刚开始想的是 先遍历吧奇结点的排好，然后再排偶结点，但是操作起来，很难分辨清楚链表的结点。所以应该用三个引用结点，同时遍历链表，找出奇结点和偶结点，
+奇结点每次都会更新结点位置，偶结点也同理，这样就把奇结点放在了一个链表，偶结点放在了另一个链表，然后将偶链表拼接在奇链表后面。
+代码：
+/**
+ * Definition for singly-linked list.
+ * public class ListNode {
+ *     int val;
+ *     ListNode next;
+ *     ListNode(int x) { val = x; }
+ * }
+ */
+class Solution {
+    public ListNode oddEvenList(ListNode head) {
+       if(head==null||head.next==null)//判断所指向的结点是否为空
+           return head;
+        ListNode pre=head;//奇链表的尾结点
+        ListNode cur=head.next;//偶链表的尾结点
+        ListNode ch=cur;//偶链表的头结点
+        while(pre.next!=null&&cur.next!=null){
+            pre.next=cur.next;
+            pre=pre.next;
+            cur.next=pre.next;
+            cur=cur.next;
+        }
+        pre.next=ch;
+        return head;
+    }
+}
