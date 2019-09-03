@@ -1,0 +1,70 @@
+## 题目：
+设计一个支持 push，pop，top 操作，并能在常数时间内检索到最小元素的栈。
+
+push(x) -- 将元素 x 推入栈中。
+pop() -- 删除栈顶的元素。
+top() -- 获取栈顶元素。
+getMin() -- 检索栈中的最小元素。
+示例:
+
+MinStack minStack = new MinStack();
+minStack.push(-2);
+minStack.push(0);
+minStack.push(-3);
+minStack.getMin();   --> 返回 -3.
+minStack.pop();
+minStack.top();      --> 返回 0.
+minStack.getMin();   --> 返回 -2.
+
+
+## 思考：
+这道题用数组ArrayList来假定一个栈，要求最小的元素，必须有一个辅助栈，当这个辅助栈为空时，就把当前元素入栈，当当前元素小于这个辅助栈里的元素时，就让当前元素入栈，否则，辅助栈就入栈它的前一个元素。总之辅助栈存的是当前入栈元素的最小元素。用空间换时间。
+
+![在这里插入图片描述](https://img-blog.csdnimg.cn/20190903165323445.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzY4ODUyNw==,size_16,color_FFFFFF,t_70)
+## 代码：
+
+```
+import java.util.ArrayList;
+class MinStack {
+    private ArrayList<Integer> normal;
+    private ArrayList<Integer> min;
+    /** initialize your data structure here. */
+    public MinStack() {
+        normal=new ArrayList<>();
+        min=new ArrayList<>();
+    }
+    
+    public void push(int x) {
+        normal.add(x);
+        if(min.isEmpty()){
+            min.add(x);
+        }else if (x<min.get(min.size()-1)){
+                min.add(x);
+            }else{
+                min.add(min.get(min.size()-1));
+            }
+    }
+    
+    public void pop() {
+        min.remove(min.size()-1);
+        normal.remove(normal.size()-1);
+    }
+    
+    public int top() {
+        return normal.get(normal.size()-1);
+    }
+    
+    public int getMin() {
+        return min.get(min.size()-1);
+    }
+}
+
+/**
+ * Your MinStack object will be instantiated and called as such:
+ * MinStack obj = new MinStack();
+ * obj.push(x);
+ * obj.pop();
+ * int param_3 = obj.top();
+ * int param_4 = obj.getMin();
+ */
+```
