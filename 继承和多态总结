@@ -1,0 +1,55 @@
+## 继承
+（1）子类是一种特殊的父类，子类表示父类的一个子集。
+（2）class 子类extends父类     只能单继承，不能多继承
+（3）父类的所有属性，在子类对象中都是存在的，public,protected中，子类可以访问父类属性或方法，default在一个包里下是可以的。private是不可以的。
+（4）super关键字
+1.明确访问父类的属性或者方法
+2.显示调用父类的构造方法，必须出现在第一行。
+（5）关于类的加载
+1.需要的时候才加载
+2.发生在运行期间，把类的字节码文件加载到内存中的过程
+3.父类的加载一定发生在子类之前，父类的静态属性初始化过程一定发生在子类的静态属性初始化之前，静态属性的初始化是 发生在类的加载的时期的。
+（6）关于对象的实例化
+1.父类属性的初始化一定发生在子类属性的初始化之前。
+2.初始化顺序：
+按书写顺序执行，定义时初始化或构造代码块
+统一执行构造方法
+（7）
+![在这里插入图片描述](https://img-blog.csdnimg.cn/201909072047234.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzY4ODUyNw==,size_16,color_FFFFFF,t_70)
+## 接口
+###### （1）目的：体现封装性
+###### （2）语法：
+interface接口名称{
+          抽象方法
+}
+###### （3）注意：
+1.接口定义允许多继承
+2.接口无法去实例化对象
+3.抽象方法直接用;结尾，不用给出具体实现
+4.接口中不能出现属性
+######  类实现接口的语法，写在定义类的时候
+class类名implements接口{
+}
+######  final关键字，修饰三个位置
+1，修饰变量，是不可变变量，只能有一次赋值。
+2，修饰类，表示这个类不能被继承
+3，修饰方法，表示这个方法无法被其子类覆写。
+###### abstract
+1,修饰类，这个类无法被实例化
+
+```
+abstract class A{
+}
+new A();编译错误
+```
+
+2，修饰方法，该方法为抽象方法，只有方法签名，没有方法实现。
+#### 注意
+1，抽象方法被实现一次后，就不再是抽象方法。
+2，父类型的引用可以指向子类型的对象
+3.引用可以调用的方法：在编译期间，是根据引用的类型，不是对象的类型
+![在这里插入图片描述](https://img-blog.csdnimg.cn/20190907211058243.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzY4ODUyNw==,size_16,color_FFFFFF,t_70)
+4，运行期间，真正执行的普通方法，以实际执行的对象的类型为准
+![在这里插入图片描述](https://img-blog.csdnimg.cn/20190907211117525.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzY4ODUyNw==,size_16,color_FFFFFF,t_70)
+5.运行期间，真正执行的静态方法，以应用类型为准
+![在这里插入图片描述](https://img-blog.csdnimg.cn/20190907211201260.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzY4ODUyNw==,size_16,color_FFFFFF,t_70)
