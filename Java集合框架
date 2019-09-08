@@ -1,0 +1,96 @@
+···
+import java.sql.SQLOutput;                                   
+import java.util.Collection;                                 
+import java.util.ArrayList;                                  
+import java.util.Arrays;                                     
+public class CollectionDemo {                                
+    public static void main(String[] args) {                 
+        Collection<String> list = new ArrayList<>();         
+        System.out.println(list);                            
+        System.out.println(list.size());                     
+        System.out.println(list.isEmpty());                  
+        System.out.println("--------------");                
+        list.add("我");                                       
+        list.add("爱");                                       
+        list.add("Java");                                    
+        System.out.println(list);                            
+        System.out.println(list.size());                     
+        System.out.println(list.isEmpty());                  
+        System.out.println("--------------");                
+        list.remove("我");                                    
+        System.out.println(list);                            
+        System.out.println(list.size());                     
+        System.out.println(list.isEmpty());                  
+//        list.clear();                                      
+//        System.out.println(list);                          
+//        System.out.println(list.size());                   
+//        System.out.println(list.isEmpty());                
+              Object[]array=list.toArray();                  
+        System.out.println(Arrays.toString(array));          
+       for(String e:list)    {                               
+           System.out.println(e);                            
+       }                                                     
+   }                                                         
+}   
+···
+import java.util.Map;
+import java.util.HashMap;
+public class MapDemo {
+    public static void main(String[] args) {
+        Map<String,String>map=new HashMap<>();
+        System.out.println(map);
+        System.out.println(map.size());
+        System.out.println(map.isEmpty());
+        System.out.println("------------");
+        System.out.println(map.get("作者"));
+        System.out.println(map.getOrDefault("作者","跌名"));
+        System.out.println(map.containsKey("作者"));
+        System.out.println(map.containsValue("跌名"));
+        System.out.println(map);
+        System.out.println(map.size());
+        System.out.println(map.isEmpty());
+        map.put("作者","鲁迅");
+        map.put("标题","狂人日记");
+        map.put("发表时间","1918年");
+        System.out.println(map.size());
+        System.out.println(map.isEmpty());
+        System.out.println("------------");
+        System.out.println(map.get("作者"));
+        System.out.println(map.getOrDefault("作者","跌名"));
+        System.out.println(map.containsKey("作者"));
+        System.out.println(map.containsValue("跌名"));
+        for(Map.Entry<String,String>e:map.entrySet()){
+            System.out.println(e);
+            System.out.println(e.getKey()+"="+e.getValue());
+        }
+    }
+}
+···
+import java.util.List;
+import java.util.ArrayList;
+import java.util.LinkedList;
+public class ListDemo {
+    public static void main(String[] args) {
+        List<String>list=new ArrayList<>();
+        list.add("哈哈哈");
+        list.add("你是猪");
+        list.add("大笨猪");
+        list.add("哈哈哈");
+        System.out.println(list);
+        System.out.println(list.get(1));
+        list.set(1,"李明健是猪");
+        System.out.println(list);
+        List<String>sublist=list.subList(1,3);//截取[1.3)
+        System.out.println(sublist);
+        List<String>llist=new ArrayList<>(10);
+        list.get(9);
+        List<String>a=new ArrayList<>();
+        System.out.println(a);
+        List<String>b=new LinkedList<>();
+        System.out.println(b);
+        ArrayList<String>c=(ArrayList<String>)a;
+        System.out.println(c);
+
+
+    }
+}
