@@ -1,0 +1,94 @@
+public class Card {
+    public int value;//牌面值
+    public String color;//花色
+    public Card(int value,String color){
+        this.value=value;
+        this.color=color;
+    }
+    public String toString(){
+        return String.format("%d,%s",value,color);
+    }
+    public boolean equals(Object obj){
+        if(obj==null)
+            return false;
+        if(!(obj instanceof Card))
+            return false;
+        if(this==obj)
+            return true;
+        Card a=(Card)obj;
+        return value==a.value&&color.equals(a.color);
+    }
+
+}
+
+
+
+
+import java.util.List;
+import java.util.ArrayList;
+import java.util.Random;
+public class Cardgame {
+  private static final String[]S={"♥","♣","♠","◇"};
+  //买牌
+  private static List<Card> buyDeck(){
+      List<Card> deck=new ArrayList<>(52);
+      for(int i=0;i<4;i++){
+          for(int j=1;j<=13;j++){
+              Card card=new Card(j,S[i]);
+              deck.add(card);
+          }
+      }
+      return deck;
+    }
+    //洗牌
+    private static void shuffel(List<Card>deck){
+      Random random=new Random(20190911);
+      for(int i=deck.size()-1;i>1;i--){
+          int r=random.nextInt(i);
+          swap(deck,i,r);
+      }
+    }
+    private static void swap(List<Card>deck,int i,int j){
+      Card t=deck.get(i);
+      deck.set(i,deck.get(j));
+      deck.set(j,t);
+    }
+    public static void main(String[] args) {
+        List<Card> deck = buyDeck();
+        System.out.println(deck);
+        shuffel(deck);
+        System.out.println(deck);
+        List<List<Card>> hands = new ArrayList<>();
+        send(hands, deck, 3, 5);
+        System.out.println(hands.get(0));
+        System.out.println(hands.get(1));
+        System.out.println(hands.get(2));
+        System.out.println(deck);
+
+        play(hands);
+    }
+    //打牌
+    public static void play(List<List<Card>>hands){
+      Card card=new Card(1,"♥");
+      for(int i=0;i<hands.size();i++){
+          if(hands.get(i).contains (card));
+          System.out.println("%d 输了");
+          return;
+      }
+    }
+    //抓牌
+    private static void send(List<List<Card>> hands, List<Card> deck, int numPerson, int numCard) {
+        // 调用 get 之前一定要保证元素是存在的
+        for (int k = 0; k < numPerson; k++) {
+            hands.add(new ArrayList<>());
+        }
+
+        for (int i = 0; i < numCard; i++) {
+            for (int j = 0; j < numPerson; j++) {
+                // 抓牌
+                Card card = deck.remove(0);
+                hands.get(j).add(card);
+            }
+        }
+    }
+}
