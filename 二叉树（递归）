@@ -1,0 +1,119 @@
+import java.util.ArrayList;
+import java.util.List;
+
+public class BurneyTree {
+    private static class Node{
+        int val;
+        private Node left=null;
+        private Node right=null;
+        public Node(int val){
+            this.val=val;
+        }
+        public String toString(){
+            return String.format("{%c}",val);
+        }
+    }
+//前序遍历
+    public static void priTrival(Node root){
+        if(root==null){
+            return ;
+        }
+        System.out.println(root);
+        priTrival(root.left);
+        priTrival(root.right);
+    }
+    //中序遍历
+    public static void inOrdertravelsal(Node root){
+        if(root==null)
+            return ;
+        inOrdertravelsal(root.left);
+        System.out.println(root);
+        inOrdertravelsal(root.right);
+    }
+    //后序遍历
+    public static void postordertravelsal(Node root){
+        if(root==null)
+            return;
+        postordertravelsal(root.left);
+        postordertravelsal(root.right);
+        System.out.println(root);
+    }
+    //汇总（前序遍历）
+    public static List<Integer> pre2(Node root){
+        if(root==null)
+            return new ArrayList<>();
+        List<Integer>left=pre2(root.left);
+        List<Integer>right=pre2(root.right);
+        List<Integer>list=new ArrayList<>();
+        list.add(root.val);
+        list.addAll(left);
+        list.addAll(right);
+        return list;
+
+    }
+    //求结点个数
+    public static int getSize2(Node root){
+        if(root==null)
+            return 0;
+        int left=getSize2(root.left);
+       int right= getSize2(root.right);
+        return left+right+1;
+    }
+    //求叶子结点个数
+    public static int getyezi2(Node root){
+        if(root==null)
+            return 0;
+        if(root.left==null&&root.right==null){
+            return 1;
+        }
+        int left=getyezi2(root.left);
+        int right=getyezi2(root.right);
+        return left+right;
+    }
+    //求树的高度
+    public int getHeight(Node root){
+        if(root==null)
+            return 0;
+        int left=getHeight(root.left);
+        int right=getHeight(root.right);
+        int m=Math.max(left,right);
+        return m+1;
+    }
+    //返回第k层的结点个数（汇总）
+    public static int getklevel(Node root,int k){
+        if(root==null)
+            return 0;
+        if(k==1)
+            return 1;
+        int left=getklevel(root.left,k-1);
+        int right=getklevel(root.right,k-1);
+        return left+right;
+    }
+    //查找val的结点
+    public static Node find(Node root,int val){
+        if(root==null)
+            return null;
+        if(root.val==val)
+            return root;
+        Node n=find(root.left,val);
+        if(n!=null){
+            return n;
+        }
+        Node m=find(root.right,val);
+        if(m!=null){
+            return m;
+        }
+        return null;
+    }
+    //判断是否互为镜像
+    public static boolean isMirrorTree(Node p,Node q){
+        if(p==null&&q==null)
+            return true;
+        if(p==null||q==null)
+            return false;
+        if(p!=null&&q!=null){
+            return (p.val==q.val)&&(isMirrorTree(p.left,q.right))&&(isMirrorTree(p.right,q.left));
+        }
+        return false;
+    }
+ }
