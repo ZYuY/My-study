@@ -1,0 +1,33 @@
+**
+ * Definition for a binary tree node.
+ * public class TreeNode {
+ *     int val;
+ *     TreeNode left;
+ *     TreeNode right;
+ *     TreeNode(int x) { val = x; }
+ * }
+ */
+class Solution {
+//判断两棵树是否相等
+    public boolean isSame(TreeNode p,TreeNode q){
+        if(p==null&&q==null)
+            return true;
+        if(p==null||q==null)
+            return false;
+        return p.val==q.val&&isSame(p.left,q.left)&&isSame(p.right,q.right);
+    }
+    
+    public boolean search(TreeNode m,TreeNode n){
+        if(m==null)
+            return false;
+        if(isSame(m,n))
+        return true;
+        if(search(m.left,n))
+        return true;
+        return search(m.right,n);
+        
+    }
+    public boolean isSubtree(TreeNode s, TreeNode t) {
+        return search(s,t);
+    }
+}
