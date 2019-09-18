@@ -1,0 +1,36 @@
+/**
+ * Definition for a binary tree node.
+ * public class TreeNode {
+ *     int val;
+ *     TreeNode left;
+ *     TreeNode right;
+ *     TreeNode(int x) { val = x; }
+ * }
+ */
+ //判断一个结点是否在这棵树上
+class Solution {
+    public boolean chazhao(TreeNode m,TreeNode n){
+        if(m==null)
+            return false;
+        if(m==n)
+            return true;
+        if(chazhao(m.left,n))
+            return true;
+        return chazhao(m.right,n);
+    }
+    public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
+       if(root==null)
+           return root;
+        if(p==root||q==root)
+            return root;
+        boolean a=chazhao(root.left,p);//看左子树中有没有p
+        boolean b=chazhao(root.left,q);//看左子树中有没有q
+        if(a&&b){
+            return lowestCommonAncestor(root.left,p,q);//p,q都在左子树的话
+        }
+        if(!a&&!b){
+            return lowestCommonAncestor(root.right,p,q);//p,q都在右子树的话
+        }
+        return root;
+    }
+}
