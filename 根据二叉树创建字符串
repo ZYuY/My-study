@@ -1,0 +1,38 @@
+/**
+ * Definition for a binary tree node.
+ * public class TreeNode {
+ *     int val;
+ *     TreeNode left;
+ *     TreeNode right;
+ *     TreeNode(int x) { val = x; }
+ * }
+ */
+class Solution {
+   public String tree(TreeNode t){
+       String s="";
+       if(t!=null){
+           s+='(';
+           s+=t.val;
+           if(t.left==null&&t.right==null){
+               
+           }else if(t.left!=null&&t.right==null){
+               s+=tree(t.left);
+           }else if(t.left==null&&t.right!=null){
+               s+="()";
+               s+=tree(t.right);
+           }else{
+               s+=tree(t.left);
+               s+=tree(t.right);
+           }
+            s+=')';
+           
+       }
+       return s;
+   }
+    public  String tree2str(TreeNode t){
+       if(t==null)
+           return "";
+        String a=tree(t);
+        return a.substring(1,a.length()-1);//删除最外层的括号
+    }
+}
