@@ -17,12 +17,13 @@ public class Sort {
     }
     //希尔排序(不稳定）28
     public static void shellSort(int[]array){
+
         int gap=array.length;
         while(true){
-            gap=gap/3+1;
-            //gap=gap/2;
+            gap=gap/2;
+            //gap=gap/3+1;
             insertSortGap(array,gap);
-            if(gap==1)//已经有序
+            if(gap==1)
                 break;
         }
     }
@@ -37,15 +38,53 @@ public class Sort {
         }
     }
     //直接选择排序（不稳定）
-    public static void selectSort(int[]array){
-        for(int i=0;i<array.length-1;i++){
-            int maxindex=0;
-            for(int j=1;j<array.length-i;j++){
+    //1  找最大值往后放 升序
+    public static void selectSort1(int[]array) {
+        for (int i = 0; i < array.length - 1; i++) {
+            int maxindex = 0;
+            for (int j = 1; j < array.length - i; j++) {
+                if (array[j] > array[maxindex]) {
+                    maxindex = j;
+                }
+            }
+            swap(array, maxindex, array.length - 1 - i);
+        }
+    }
+      //2 找最小值往前放 升序
+        public static void selectSort2(int[]array) {
+            for (int i = 0; i < array.length - 1; i++) {
+                int minindex = i;
+                for (int j = i + 1; j < array.length; j++) {
+                    if (array[j] < array[minindex]) {
+                        minindex = j;
+                    }
+                }
+                swap(array, minindex, i);
+            }
+        }
+
+        //双排
+    public static void selectSort3(int[]array){
+        int begin=0;
+        int end=array.length-1;
+        while(begin<end){
+            int minindex=begin;
+            int maxindex=begin;
+            for(int j=begin+1;j<=end;j++){
                 if(array[j]>array[maxindex]){
                     maxindex=j;
                 }
+                if(array[j]<array[minindex]){
+                    minindex=j;
+                }
             }
-            swap(array,maxindex,array.length-i-1);
+            swap(array,minindex,begin);
+            if(maxindex==begin){
+                maxindex=minindex;
+            }
+            swap(array,maxindex,end);
+            begin++;
+            end--;
         }
     }
     public static void swap(int[]nums,int a,int b){
@@ -53,14 +92,11 @@ public class Sort {
         nums[a]=nums[b];
         nums[b]=top;
     }
-    public static void selectSort2(int[]array){
-
-    }
     //堆排序(不稳定）
     public static void createHeapBig(int[]array){
         int size=array.length;
         for(int i=(size-2)/2;i>=0;i--){
-            shiftDown(array,0,size-i);
+            shiftDown(array,0,size);
         }
     }
     public static void shiftDown(int[]array,int index,int size){
@@ -81,7 +117,7 @@ public class Sort {
             }
         }
     }
-    public static void sort(int[]array){
+    public static void heapSort(int[]array){
         createHeapBig(array);
         for(int i=0;i<array.length-1;i++){
             swap(array,0,array.length-i-1);
@@ -89,13 +125,17 @@ public class Sort {
         }
     }
     //冒泡排序（稳定）
-    public static void sort2(int[]nums){
+    public static void bubbleSort(int[]nums){
         for(int i=0;i<nums.length-1;i++){
+            boolean issort=true;
             for(int j=0;j<nums.length-i-1;j++){
                 if(nums[j]>nums[j+1]){
                     swap(nums,j+1,j);
+                    issort=false;
                 }
             }
+            if(issort)
+                return;
         }
     }
     public static void main(String[] args) {
@@ -105,7 +145,7 @@ public class Sort {
         a[i]=random.nextInt(10*10000);
     }
        long begin=System.nanoTime() ;
-    sort2(a);
+    bubbleSort(a);
     long end=System.nanoTime();
     double ms=(end-begin)*1.0/1000/1000;
         System.out.printf("共耗时：%.5f 毫秒%n",ms);
