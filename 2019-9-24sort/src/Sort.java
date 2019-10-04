@@ -4,7 +4,7 @@ public class Sort {
     //插入排序（拿后面的数与前面的比较，小的就插入适当的位置）2000
     //稳定   时间 o(n^2)   空间o(1)
     public static void insertSort(int[]nums) {
-        for(int i=1;i<=nums.length;i++){
+        for(int i=1;i<nums.length;i++){
             //有序[0,i)
             //无序[i,nums.length)
             int key=nums[i];

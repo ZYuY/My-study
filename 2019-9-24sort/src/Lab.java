@@ -2,9 +2,33 @@ import java.lang.reflect.Array;
 import java.util.Arrays;
 import java.util.Random;
 
+// 排序方法的抽象
 interface SortMethod {
+    /**
+     * @return 排序方法名称
+     */
     String getName();
+
+    /**
+     * 排序 a
+     * @param a
+     */
     void sort(int[] a);
+}
+
+// 构建原始数组的方法的抽象
+interface BuildMethod {
+    /**
+     * @return 返回构建方法名称
+     */
+    String getName();
+
+    /**
+     * 构建数组
+     * @param n 数组的大小
+     * @return 构建好的数组
+     */
+    int[] build(int n);
 }
 
 class InsertSortMethod implements SortMethod {
@@ -12,18 +36,49 @@ class InsertSortMethod implements SortMethod {
     public String getName() {
         return "插入排序";
     }
-
     @Override
     public void sort(int[] a) {
         Sort.insertSort(a);
     }
 }
 
-public class Lab {
-    private static SortMethod[] methods = {
-            new InsertSortMethod(),
-    };
+class ShellSortMethod implements SortMethod {
+    @Override
+    public String getName() {
+        return "希尔排序";
+    }
 
+    @Override
+    public void sort(int[] a) {
+        Sort.shellSort(a);
+    }
+}
+
+class BuildRandomMethod implements BuildMethod {
+    @Override
+    public String getName() {
+        return "构建随机数组";
+    }
+
+    @Override
+    public int[] build(int n) {
+        return Lab.buildRandom(n);
+    }
+}
+
+class BuildSortedMethod implements BuildMethod {
+    @Override
+    public String getName() {
+        return "构建有序数组";
+    }
+
+    @Override
+    public int[] build(int n) {
+        return Lab.buildSorted(n);
+    }
+}
+
+public class Lab {
     public static int[] buildRandom(int n) {
         Random random = new Random(20190924);
         int[] r = new int[n];
@@ -80,6 +135,32 @@ public class Lab {
     }
 
     public static void main(String[] args) {
+        BuildMethod[] bms = {
+                new BuildRandomMethod(),
+                new BuildSortedMethod()
+        };
+        SortMethod[] sms = {
+                new InsertSortMethod(),
+                new ShellSortMethod(),
+        };
+        for (int i = 1; i <= 4; i++) {
+            int n = 50000 * i;
+            for (BuildMethod bm : bms) {
+                int[] a = bm.build(n);
+                for (SortMethod sm : sms) {
+                    int[] b = a.clone();
+                    long begin = System.nanoTime();
+                    sm.sort(b);
+                    long end = System.nanoTime();
+                    double ms = (end - begin) * 1.0 / 1000 / 1000;
+                    System.out.printf("%d: %s: %s: %.4f%n", n, bm.getName(), sm.getName(), ms);
+                }
+            }
+        }
+    }
+
+    /*
+    public static void main(String[] args) {
         for (int i = 1; i <= 4; i++) {
             int n = i * 50000;
             int[] random = buildRandom(n);
@@ -97,5 +178,5 @@ public class Lab {
             }
         }
     }
+     */
 }
-
