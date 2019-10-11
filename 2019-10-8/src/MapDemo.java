@@ -4,7 +4,9 @@ import java.util.Map;
 public class MapDemo {
     public static <hashMap> void main(String[] args) {
         Map<String ,String> map=new HashMap<>();
+        map.put("唐老师","234");
         System.out.println(map.get("唐老师"));
+        System.out.println(map.remove("唐老师","23"));
         System.out.println(map.getOrDefault("糖老实","查无此人"));
         String oldValue = map.put("汤老湿", "12345678");
         System.out.println(oldValue);
