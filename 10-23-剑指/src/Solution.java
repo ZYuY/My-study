@@ -54,20 +54,23 @@ public class Solution {
     public boolean IsBalanced_Solution(Node root) {
         if(root==null)
             return true;
-        if(!IsBalanced_Solution(root.left))
+        if(!(IsBalanced_Solution(root.left)))
             return false;
-        if(!IsBalanced_Solution(root.right))
+        if(!(IsBalanced_Solution(root.right)))
             return false;
-        int p=gethight(root.left);
-        int q=gethight(root.right);
-        int s=p-q;
-        if(s>=-1&&s<=1)
+        int left=Sum(root.left);
+        int right=Sum(root.right);
+        if(left-right>=-1&&left-right<=1){
             return true;
+        }
         return false;
     }
-    public int gethight(Node t){
-        if(t==null)
+
+    private int Sum(Node node) {
+        if(node==null)
             return 0;
-        return Math.max(gethight(t.left),gethight(t.right))+1;
+        int left=Sum(node.left);
+        int right=Sum(node.right);
+        return Math.max(left,right)+1;
     }
 }
