@@ -2,11 +2,13 @@ package dao;
 
 
 
+
 import com.mysql.jdbc.jdbc2.optional.MysqlDataSource;
 
 import javax.sql.DataSource;
 import java.io.PrintWriter;
 import java.net.URLEncoder;
+
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -34,8 +36,13 @@ public class DBUtil {
             }
             return dataSource;
         }
-        public  static Connection getConnection() throws SQLException {
-        return  getDataSource() .getConnection();
+        public  static Connection getConnection() {
+            try {
+                return  getDataSource() .getConnection();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+            return null;
         }
         public  static  void close(Connection connection, PreparedStatement statement, ResultSet resultSet)  {
                 try {
