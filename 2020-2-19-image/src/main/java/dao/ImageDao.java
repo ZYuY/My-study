@@ -52,7 +52,7 @@ public class ImageDao {
      * 查找数据库中所有图片的信息
      * @return
      */
-    public List<Image> selectAll() throws SQLException {
+    public List<Image> selectAll() {
         List<Image>images=new ArrayList<Image>();
         //1.获取数据库连接
         Connection connection=DBUtil.getConnection();
@@ -177,8 +177,40 @@ public class ImageDao {
         //3.测试查找指定imageId图片的信息
 //
         //4.测试删除图片
-        ImageDao imageDao=new ImageDao();
-        imageDao.delete(1);
-        System.out.println(imageDao);
+//        ImageDao imageDao=new ImageDao();
+//        imageDao.delete(1);
+//        System.out.println(imageDao);
+    }
+    public Image selectByMd5(String md5) {
+        // 1. 获取数据库连接
+        Connection connection = DBUtil.getConnection();
+        // 2. 构造 SQL 语句
+        String sql = "select * from image_table where md5 = ?";
+        PreparedStatement statement = null;
+        ResultSet resultSet = null;
+        try {
+            // 3. 执行 SQL 语句
+            statement = connection.prepareStatement(sql);
+            statement.setString(1, md5);
+            resultSet = statement.executeQuery();
+            // 4. 处理结果集
+            if (resultSet.next()) {
+                Image image = new Image();
+                image.setImageId(resultSet.getInt("imageId"));
+                image.setImageName(resultSet.getString("imageName"));
+                image.setSize(resultSet.getInt("size"));
+                image.setUploadTime(resultSet.getString("uploadTime"));
+                image.setContentType(resultSet.getString("contentType"));
+                image.setPath(resultSet.getString("path"));
+                image.setMd5(resultSet.getString("md5"));
+                return image;
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            // 5. 关闭链接
+            DBUtil.close(connection, statement, resultSet);
+        }
+        return null;
     }
 }

@@ -4,6 +4,7 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import dao.Image;
 import dao.ImageDao;
+import org.apache.commons.codec.digest.DigestUtils;
 import org.apache.commons.fileupload.FileItem;
 import org.apache.commons.fileupload.FileItemFactory;
 import org.apache.commons.fileupload.FileUploadException;
@@ -14,9 +15,11 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.io.File;
 import java.io.IOException;
 import java.sql.SQLException;
 import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 public class ImageServlet extends HttpServlet {
@@ -38,14 +41,14 @@ public class ImageServlet extends HttpServlet {
         String imageId = req.getParameter("imageId");
         if (imageId == null || imageId.equals("")) {
             // 查看所有图片属性
-            selectAll(req, resp);
+            selectAll(req, resp) ;
         } else {
             // 查看指定图片
             selectOne(imageId, resp);
         }
     }
 
-    private void selectAll(HttpServletRequest req, HttpServletResponse resp) throws IOException, SQLException {
+    private void selectAll(HttpServletRequest req, HttpServletResponse resp) throws IOException {
         resp.setContentType("application/json; charset=utf-8");
         // 1. 创建一个 ImageDao 对象, 并查找数据库
         ImageDao imageDao = new ImageDao();
@@ -104,7 +107,7 @@ public class ImageServlet extends HttpServlet {
         Image image = new Image();
         image.setImageName(fileItem.getName());
         image.setSize((int)fileItem.getSize());
-        // 手动获取一下当前日期, 并转成格式化日期, yyMMdd => 20200218
+        // 手动获取一下当前日期, 并转成格式化日期, yyyyMMdd => 20200218
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyyMMdd");
         image.setUploadTime(simpleDateFormat.format(new Date()));
         image.setContentType(fileItem.getContentType());
