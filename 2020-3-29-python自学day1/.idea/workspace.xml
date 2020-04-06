@@ -24,8 +24,8 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
   </component>
-  <component name="RunManager" selected="Python.网易邮箱">
-    <configuration name="邮箱" type="PythonConfigurationType" factoryName="Python" temporary="true">
+  <component name="RunManager" selected="Python.网易邮箱登录">
+    <configuration name="网易邮箱登录" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="2020-3-29-python自学day1" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -33,11 +33,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/0406src" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/邮箱.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/0406src/网易邮箱登录.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -46,7 +46,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="04022" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="040403" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="2020-3-29-python自学day1" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -54,11 +54,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$USER_HOME$/AppData/Local/Temp/HZ$D.108.4366/HZ$D.108.4369/测试代码和板书0402/src0402" />
+      <option name="WORKING_DIRECTORY" value="$USER_HOME$/AppData/Local/Temp/HZ$D.055.3013/HZ$D.055.3016/src0404" />
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$USER_HOME$/AppData/Local/Temp/HZ$D.108.4366/HZ$D.108.4369/测试代码和板书0402/src0402/04022.py" />
+      <option name="SCRIPT_NAME" value="$USER_HOME$/AppData/Local/Temp/HZ$D.055.3013/HZ$D.055.3016/src0404/040403.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -67,7 +67,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="04023" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="040404" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="2020-3-29-python自学day1" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -75,11 +75,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$USER_HOME$/AppData/Local/Temp/HZ$D.108.4366/HZ$D.108.4370/测试代码和板书0402/src0402" />
+      <option name="WORKING_DIRECTORY" value="$USER_HOME$/AppData/Local/Temp/HZ$D.055.3013/HZ$D.055.3017/src0404" />
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$USER_HOME$/AppData/Local/Temp/HZ$D.108.4366/HZ$D.108.4370/测试代码和板书0402/src0402/04023.py" />
+      <option name="SCRIPT_NAME" value="$USER_HOME$/AppData/Local/Temp/HZ$D.055.3013/HZ$D.055.3017/src0404/040404.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -88,7 +88,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="04024" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="脚本2" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="2020-3-29-python自学day1" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -96,11 +96,32 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$USER_HOME$/AppData/Local/Temp/HZ$D.108.4366/HZ$D.108.4371/测试代码和板书0402/src0402" />
-      <option name="IS_MODULE_SDK" value="false" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/0406src" />
+      <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$USER_HOME$/AppData/Local/Temp/HZ$D.108.4366/HZ$D.108.4371/测试代码和板书0402/src0402/04024.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/0406src/脚本2.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="脚本3" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="2020-3-29-python自学day1" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/0406src" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/0406src/脚本3.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -132,11 +153,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.网易邮箱" />
-        <item itemvalue="Python.邮箱" />
-        <item itemvalue="Python.04024" />
-        <item itemvalue="Python.04023" />
-        <item itemvalue="Python.04022" />
+        <item itemvalue="Python.网易邮箱登录" />
+        <item itemvalue="Python.040404" />
+        <item itemvalue="Python.脚本3" />
+        <item itemvalue="Python.040403" />
+        <item itemvalue="Python.脚本2" />
       </list>
     </recent_temporary>
   </component>
@@ -166,29 +187,33 @@
     <servers />
   </component>
   <component name="WindowStateProjectService">
-    <state width="1259" height="162" key="GridCell.Tab.0.bottom" timestamp="1585909738033">
+    <state width="1259" height="162" key="GridCell.Tab.0.bottom" timestamp="1586164612980">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1259" height="162" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1585909738033" />
-    <state width="1259" height="162" key="GridCell.Tab.0.center" timestamp="1585909738033">
+    <state width="1259" height="162" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1586164612980" />
+    <state width="1259" height="162" key="GridCell.Tab.0.center" timestamp="1586164612980">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1259" height="162" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1585909738033" />
-    <state width="1259" height="162" key="GridCell.Tab.0.left" timestamp="1585909738033">
+    <state width="1259" height="162" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1586164612980" />
+    <state width="1259" height="162" key="GridCell.Tab.0.left" timestamp="1586164612980">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1259" height="162" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1585909738033" />
-    <state width="1259" height="162" key="GridCell.Tab.0.right" timestamp="1585909738033">
+    <state width="1259" height="162" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1586164612980" />
+    <state width="1259" height="162" key="GridCell.Tab.0.right" timestamp="1586164612980">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1259" height="162" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1585909738033" />
+    <state width="1259" height="162" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1586164612980" />
     <state x="144" y="0" key="SettingsEditor" timestamp="1585887616329">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="144" y="0" key="SettingsEditor/0.0.1280.680@0.0.1280.680" timestamp="1585887616329" />
-    <state x="336" y="168" key="com.intellij.ide.util.TipDialog" timestamp="1585884631757">
+    <state x="336" y="168" key="com.intellij.ide.util.TipDialog" timestamp="1586140697219">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="336" y="168" key="com.intellij.ide.util.TipDialog/0.0.1280.680@0.0.1280.680" timestamp="1585884631757" />
+    <state x="336" y="168" key="com.intellij.ide.util.TipDialog/0.0.1280.680@0.0.1280.680" timestamp="1586140697219" />
+    <state x="303" y="1" width="672" height="678" key="search.everywhere.popup" timestamp="1586150916461">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="303" y="1" width="672" height="678" key="search.everywhere.popup/0.0.1280.680@0.0.1280.680" timestamp="1586150916461" />
   </component>
 </project>
