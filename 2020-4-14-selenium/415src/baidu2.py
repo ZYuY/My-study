@@ -17,7 +17,7 @@ class Baidu2(unittest.TestCase):
         self.driver.quit()
         self.assertEqual([], self.verificationErrors)
 
-    @ unittest.skip("skipping")
+    # @ unittest.skip("skipping")
     def test_hao(self):
         driver = self.driver
         driver.get(self.base_url)
@@ -26,7 +26,7 @@ class Baidu2(unittest.TestCase):
         self.assertTrue("admin" == "admin1", msg="True")
         time.sleep(8)
 
-    @unittest.skip("skipping")
+    # @unittest.skip("skipping")
     def test_baidusearch(self):
         driver = self.driver
         driver.get(self.base_url)

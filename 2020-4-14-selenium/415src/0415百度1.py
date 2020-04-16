@@ -23,7 +23,7 @@ class Baidu1(unittest.TestCase):
         driver.get(self.base_url)
         driver.find_element_by_link_text("hao123").click()
         time.sleep(5)
-        self.assertTrue("admin" == "admin1", msg="True")
+        self.assertTrue("admin" == "admin", msg="True")
         time.sleep(8)
     @unittest.skip("skipping")
     def test_baidusearch(self):

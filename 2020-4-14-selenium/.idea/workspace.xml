@@ -30,8 +30,8 @@
       <recent name="C:\Users\11506\PycharmProjects\2020-4-14-selenium\415src" />
     </key>
   </component>
-  <component name="RunManager" selected="Python tests.Unittests for 0415百度1.Baidu1.test_hao">
-    <configuration name="Baidu1040601" type="PythonConfigurationType" factoryName="Python" temporary="true">
+  <component name="RunManager" selected="Python.textsuit">
+    <configuration name="textsuit" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="2020-4-14-selenium" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -39,32 +39,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="E:/测试脚本学习/src0409" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="E:/测试脚本学习/src0409/Baidu1040601.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="下拉框处理" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="2020-4-14-selenium" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/0414src" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src0416" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/0414src/下拉框处理.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src0416/textsuit.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -87,20 +66,6 @@
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="Unittests for 0415百度1.Baidu1.test_hao" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
-      <module name="2020-4-14-selenium" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/415src" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;0415百度1.Baidu1.test_hao&quot;" />
-      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
-      <method v="2" />
-    </configuration>
     <configuration name="Unittests for 0415百度1.Baidu.test_baidusearch" type="tests" factoryName="Unittests" nameIsGenerated="true">
       <module name="2020-4-14-selenium" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -115,7 +80,7 @@
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="Unittests for baidu2.Baidu2" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+    <configuration name="Unittests for baidu2.Baidu2.test_hao" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
       <module name="2020-4-14-selenium" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -125,31 +90,73 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;baidu2.Baidu2&quot;" />
+      <option name="_new_target" value="&quot;baidu2.Baidu2.test_hao&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="Unittests for baidu2.Baidu2.test_baidusearch" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+    <configuration name="Unittests for src0416.text1" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
       <module name="2020-4-14-selenium" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/415src" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src0416" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;baidu2.Baidu2.test_baidusearch&quot;" />
+      <option name="_new_target" value="&quot;src0416.text1&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Unittests for src0416.text1" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+      <module name="2020-4-14-selenium" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src0416" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;src0416.text1&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Unittests for src0416.text2.Baidu2" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+      <module name="2020-4-14-selenium" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src0416" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;src0416.text2.Baidu2&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Unittests for text1.Baidu" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+      <module name="2020-4-14-selenium" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/0416src" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;text1.Baidu&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python tests.Unittests for 0415百度1.Baidu1.test_hao" />
-        <item itemvalue="Python tests.Unittests for baidu2.Baidu2" />
-        <item itemvalue="Python tests.Unittests for baidu2.Baidu2.test_baidusearch" />
-        <item itemvalue="Python tests.Unittests for 0415百度1.Baidu1" />
-        <item itemvalue="Python.Baidu1040601" />
+        <item itemvalue="Python.textsuit" />
+        <item itemvalue="Python tests.Unittests for src0416.text2.Baidu2" />
+        <item itemvalue="Python tests.Unittests for src0416.text1" />
+        <item itemvalue="Python tests.Unittests for src0416.text1" />
+        <item itemvalue="Python tests.Unittests for baidu2.Baidu2.test_hao" />
       </list>
     </recent_temporary>
   </component>
@@ -187,18 +194,18 @@
     </state>
     <state x="351" y="0" key="#Unittests_for_0415百度1.Baidu.test_baidusearch/0.0.1280.680@0.0.1280.680" timestamp="1586956036547" />
     <state x="351" y="0" key="#Unittests_for_0415百度1.Baidu/0.0.1280.680@0.0.1280.680" timestamp="1586956293844" />
-    <state x="351" y="0" key="#Unittests_for_0415百度1.Baidu1" timestamp="1586958645209">
+    <state x="351" y="0" key="#Unittests_for_0415百度1.Baidu1" timestamp="1587004855742">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="351" y="0" key="#Unittests_for_0415百度1.Baidu1.test_baidusearch" timestamp="1586956729046">
+    <state x="351" y="0" key="#Unittests_for_0415百度1.Baidu1.test_baidusearch" timestamp="1587005162673">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="351" y="0" key="#Unittests_for_0415百度1.Baidu1.test_baidusearch/0.0.1280.680@0.0.1280.680" timestamp="1586956729046" />
+    <state x="351" y="0" key="#Unittests_for_0415百度1.Baidu1.test_baidusearch/0.0.1280.680@0.0.1280.680" timestamp="1587005162673" />
     <state x="351" y="0" key="#Unittests_for_0415百度1.Baidu1.test_hao" timestamp="1586958654394">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="351" y="0" key="#Unittests_for_0415百度1.Baidu1.test_hao/0.0.1280.680@0.0.1280.680" timestamp="1586958654394" />
-    <state x="351" y="0" key="#Unittests_for_0415百度1.Baidu1/0.0.1280.680@0.0.1280.680" timestamp="1586958645209" />
+    <state x="351" y="0" key="#Unittests_for_0415百度1.Baidu1/0.0.1280.680@0.0.1280.680" timestamp="1587004855742" />
     <state x="281" y="59" width="579" height="621" key="#Unittests_for_0415百度1.baidu" timestamp="1586954580147">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
@@ -219,22 +226,22 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="420" y="95" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1586957559854" />
-    <state width="1259" height="163" key="GridCell.Tab.0.bottom" timestamp="1586958663275">
+    <state width="1259" height="163" key="GridCell.Tab.0.bottom" timestamp="1587043180924">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1259" height="163" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1586958663275" />
-    <state width="1259" height="163" key="GridCell.Tab.0.center" timestamp="1586958663275">
+    <state width="1259" height="163" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1587043180924" />
+    <state width="1259" height="163" key="GridCell.Tab.0.center" timestamp="1587043180923">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1259" height="163" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1586958663275" />
-    <state width="1259" height="163" key="GridCell.Tab.0.left" timestamp="1586958663275">
+    <state width="1259" height="163" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1587043180923" />
+    <state width="1259" height="163" key="GridCell.Tab.0.left" timestamp="1587043180920">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1259" height="163" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1586958663275" />
-    <state width="1259" height="163" key="GridCell.Tab.0.right" timestamp="1586958663275">
+    <state width="1259" height="163" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1587043180920" />
+    <state width="1259" height="163" key="GridCell.Tab.0.right" timestamp="1587043180923">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1259" height="163" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1586958663275" />
+    <state width="1259" height="163" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1587043180923" />
     <state width="1259" height="204" key="GridCell.Tab.1.bottom" timestamp="1586957651538">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
@@ -255,5 +262,9 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="142" y="0" key="SettingsEditor/0.0.1280.680@0.0.1280.680" timestamp="1586957569104" />
+    <state x="325" y="165" key="com.intellij.ide.util.TipDialog" timestamp="1587004635930">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="325" y="165" key="com.intellij.ide.util.TipDialog/0.0.1280.680@0.0.1280.680" timestamp="1587004635930" />
   </component>
 </project>
