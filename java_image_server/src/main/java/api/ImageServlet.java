@@ -59,7 +59,7 @@ public class ImageServlet extends HttpServlet {
         //    重点体会下面这行代码, 这个方法的核心, gson 帮我们自动完成了大量的格式转换工作
         //    只要把之前的相关的字段都约定成统一的命名, 下面的操作就可以一步到位的完成整个转换
         String jsonData = gson.toJson(images);
-        resp.getWriter().write(jsonData);
+        resp.getWriter().write(jsonData);//直接出现内容
     }
 
     private void selectOne(String imageId, HttpServletResponse resp) throws IOException {
@@ -82,6 +82,7 @@ public class ImageServlet extends HttpServlet {
      */
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+
         // 1. 获取图片的属性信息, 并且存入数据库
         //  a) 需要创建一个 factory 对象 和 upload 对象, 这是为了获取到图片属性做的准备工作
         //     固定的逻辑
@@ -125,8 +126,10 @@ public class ImageServlet extends HttpServlet {
 
         // 2. 获取图片的内容信息, 并且写入磁盘文件
         if (existImage == null) {
-            File file = new File(image.getPath());
+            File file = new File(image.getPath());//创建指定路径的文件
             try {
+                //将FileItem对象中的内容保存到某个指定的文件中
+                //最主要的用途是把上传的文件内容保存在本地文件系统中。
                 fileItem.write(file);
             } catch (Exception e) {
                 e.printStackTrace();
@@ -151,7 +154,16 @@ public class ImageServlet extends HttpServlet {
      * @throws IOException
      */
     @Override
+    /**
+     * //  web.xml就是告诉服务器tomcat你的项目有哪些服务信息
+     * 从Servlet的第一次请求开始（因为这时Servlet对象还没有创建），先执行new的操作（构造方法），
+     * 再调用init()进行初始化。接着等待请求的到来，一旦有请求到来，service()方法被调用，
+     * 根据请求类型决定调用doGet()/doPost()。只要有请求到来就会重复service()-->doGet()/doPost()这一过程。
+     * 当服务器重启或者关闭时，destroy()方法被调用，进行销毁Servlet对象工作
+     * ————————————————
+     */
     protected void doDelete(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+
         resp.setContentType("application/json; charset=utf-8");
         // 1. 先获取到请求中的 imageId
         String imageId = req.getParameter("imageId");

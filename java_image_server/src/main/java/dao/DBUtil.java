@@ -12,7 +12,10 @@ import java.sql.SQLException;
 public class DBUtil {
     private static final String  url="jdbc:mysql://127.0.0.1:3306/image_picture?characterEncoding=utf8&&useSSL=true";
     private  static  final  String USERNAME="root";
-    private static  final  String PASSWORD="mysql";
+    private static  final  String PASSWORD="LMJian521";
+    /**
+     * DataSource创建的connection既有基本实现，也有连接池实现（可以复用，DataSource帮我们实现了复用机制
+     */
     private  static DataSource dataSource=null;
     public  static  DataSource getDataSource(){
         //通过这个方法来创建DataSource的实例

@@ -151,13 +151,13 @@ public class ImageDao {
         //4.关闭连接
     }
 //如果mysql在云服务器上，需要打jar包，把jar包拷贝到云服务器上就可以执行了
-    public static void main(String[] args) {
+    //public static void main(String[] args) {
         //用于进行简单的测试
 //        //1.测试插入数据
 //        Image image=new Image();
 //        image.setImageName("1.png");
 //        image.setSize(100);
-//        image.setUploadTime("20200220");
+//        image.setUploadTime("20200330");
 //        image.setContentType("/image/png");
 //        image.setPath("./data/1.png");
 //        image.setMd5("1232435");
@@ -175,7 +175,7 @@ public class ImageDao {
 //        ImageDao imageDao=new ImageDao();
 //        imageDao.delete(1);
 //        System.out.println(imageDao);
-    }
+    //}
     public Image selectByMd5(String md5) {
         // 1. 获取数据库连接
         Connection connection = DBUtil.getConnection();

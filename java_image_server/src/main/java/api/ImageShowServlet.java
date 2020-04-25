@@ -15,9 +15,8 @@ import java.util.HashSet;
 
 public class ImageShowServlet extends HttpServlet {
     static private HashSet<String> whiteList = new HashSet<>();
-
     static {
-        whiteList.add("http://127.0.0.1:8080/java_image_server/index.html");
+        whiteList.add("http://116.62.160.101:8081/java_image_server/index.html");
     }
 
     /**
