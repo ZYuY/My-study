@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Scanner;
 import java.util.Set;
 
 public class Text1 {
@@ -112,5 +113,31 @@ public class Text1 {
         }
         return grid[row-1][high-1];
     }
-
+//01背包问题
+public static void main(String[] args) {
+    Scanner input=new Scanner(System.in);
+    int n=input.nextInt();//n个物品
+    int sum=input.nextInt();//背包容量
+    int[]weight=new int[n];//重量
+    int []value=new int[n];//价值
+    for(int i=0;i<n;i++){
+        value[i]=input.nextInt();
+    }
+    for(int i=0;i<n;i++){
+        weight[i]=input.nextInt();
+    }
+    int[][]dp=new int[n+1][sum+1];
+    //行代表物品，列代表子背包的容量
+    for(int i=1;i<=n;i++){
+        for(int j=1;j<=sum;j++){
+            if(weight[i-1]>j){
+                //放不下
+                dp[i][j]=dp[i-1][j];
+            }else{
+                dp[i][j]=Math.max(dp[i-1][j],dp[i-1][j-weight[i-1]]+value[i-1]);
+            }
+        }
+    }
+    System.out.println(dp[n][sum]);
+}
 }
