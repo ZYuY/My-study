@@ -4,6 +4,7 @@ import dao.Image;
 import dao.ImageDao;
 
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -13,10 +14,12 @@ import java.io.IOException;
 import java.io.OutputStream;
 import java.util.HashSet;
 
+@WebServlet("/imageShow")
 public class ImageShowServlet extends HttpServlet {
     static private HashSet<String> whiteList = new HashSet<>();
     static {
-        whiteList.add("http://116.62.160.101:8081/java_image_server/index.html");
+        whiteList.add("http://127.0.0.1:8081/image_server/index.html");
+        //whiteList.add("http://116.62.160.101:8080/image_server/index.html");
     }
 
     /**
