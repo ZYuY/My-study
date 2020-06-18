@@ -84,7 +84,7 @@
 //                String insertWords = String.join(",",words);
 ////因为connection不是线程安全的，所以每次需要从datasource中获取连接
 //                try(Connection connection = dataSource.getConnection()) {
-//                    String sql = "INSERT INTO tangshi(sha256,dynasty,title,author,content,words)VALUES(?,?,?,?,?,?)";
+//                    String sql = "INSERT INTO tangpoetry(sha256,dynasty,title,author,content,words)VALUES(?,?,?,?,?,?)";
 //                    try(PreparedStatement statement = connection.prepareStatement(sql)){
 //                        statement.setString(1,sha256.toString());
 //                        statement.setString(2,dynasty);

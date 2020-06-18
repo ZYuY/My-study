@@ -89,7 +89,7 @@ public class MultipleThreadCatch {
                String insertWords = String.join(",",words);
 
                try(Connection connection = dataSource.getConnection()) {
-                   String sql = "INSERT INTO tangshi(sha256,dynasty,title,author,content,words)VALUES(?,?,?,?,?,?)";
+                   String sql = "INSERT INTO tangpoetry(sha256,dynasty,title,author,content,words)VALUES(?,?,?,?,?,?)";
                    try(PreparedStatement statement = connection.prepareStatement(sql)){
                        statement.setString(1,sha256.toString());
                        statement.setString(2,dynasty);
@@ -147,8 +147,8 @@ public class MultipleThreadCatch {
         dataSource2.setServerName("127.0.0.1");
         dataSource2.setPort(3306);
         dataSource2.setUser("root");
-       dataSource2.setPassword("root");
-       dataSource2.setDatabaseName("tangshi");
+       dataSource2.setPassword("mysql");
+       dataSource2.setDatabaseName("2020-1-9-唐诗");
        dataSource2.setUseSSL(false);
        dataSource2.setCharacterEncoding("UTF8");
 /**

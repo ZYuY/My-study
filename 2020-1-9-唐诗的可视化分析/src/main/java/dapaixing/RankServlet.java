@@ -20,17 +20,17 @@ public class RankServlet extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         resp.setContentType("application/json; charset=utf-8");
 
-        String condition = req.getParameter("condition");
-        if (condition == null) {
-            condition = "2";
-        }
+//        String condition = req.getParameter("condition");
+//        if (condition == null) {
+//            condition ="10";
+//        }
 
 
         JSONArray jsonArray = new JSONArray();
         try (Connection connection = DBConfig.getConnection()) {
-            String sql = "SELECT author, count(*) AS cnt FROM tangpoetry GROUP BY author HAVING cnt >= ? ORDER BY cnt DESC";
+            String sql = "SELECT author, count(*) AS cnt FROM tangpoetry GROUP BY author HAVING cnt >=? ORDER BY cnt DESC";
             try (PreparedStatement statement = connection.prepareStatement(sql)) {
-                statement.setString(1, condition);
+                statement.setString(1, "10");
                 try (ResultSet rs = statement.executeQuery()) {
                     while (rs.next()) {
                         String author = rs.getString("author");
