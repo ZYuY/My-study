@@ -150,4 +150,52 @@ public class Text {
             cur.remove(cur.size()-1);
         }
     }
+
+    //字母异位词分组
+    public List<List<String>> groupAnagrams(String[] strs) {
+        Map<String,List<String>>map=new HashMap<>();
+        int len=strs.length;
+        if(len==0)return null;
+        for(int i=0;i<len;i++){
+            char[]arr=strs[i].toCharArray();
+            Arrays.sort(arr);
+            String str=String.valueOf(arr);
+            if(!map.containsKey(str))
+                map.put(str,new ArrayList<>());
+            map.get(str).add(strs[i]);
+        }
+        return new ArrayList<>(map.values());
+    }
+
+    //爬楼梯
+    public int climbStairs(int n) {
+        if(n<=0)return 0;
+        int sum=0;
+        int a=1,b=2;
+        if(n==1)return a;
+        if(n==2)return b;
+        for(int i=3;i<=n;i++){
+            sum=a+b;
+            a=b;
+            b=sum;
+        }
+        return sum;
+    }
+
+    //求子集
+    List<List<Integer>>res=new ArrayList<>();
+    public List<List<Integer>> subsets(int[] nums) {
+        res.add(new ArrayList<>());
+        if(nums==null||nums.length==0)return res;
+        dfs(nums,0,new ArrayList<>());
+        return res;
+    }
+    public void dfs(int[]arr,int index,List<Integer>cur){
+        for(int i=index;i<arr.length;i++){
+            cur.add(arr[i]);
+            res.add(new ArrayList<>(cur));
+            dfs(arr,i+1,cur);
+            cur.remove(cur.size()-1);
+        }
+    }
 }
